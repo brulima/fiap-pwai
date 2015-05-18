@@ -16,6 +16,7 @@ public class EnderecoTO implements Serializable{
 	private String estado;
 	private String complemento;
 	private int numero;
+	private String teste;
 	
 	public String getCep() {
 		return cep;
