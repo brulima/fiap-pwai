@@ -3,10 +3,10 @@ package com.fiap.endereco.to;
 import java.io.Serializable;
 
 public class EnderecoTO implements Serializable{
-
 	
-	public EnderecoTO () {
-		
+	public EnderecoTO() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	private String cep;
