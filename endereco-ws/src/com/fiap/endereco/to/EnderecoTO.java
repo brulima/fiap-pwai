@@ -6,7 +6,7 @@ public class EnderecoTO implements Serializable{
 	
 	public EnderecoTO() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	private String cep;
