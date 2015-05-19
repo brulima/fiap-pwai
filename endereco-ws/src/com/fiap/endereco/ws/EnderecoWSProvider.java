@@ -1,29 +1,17 @@
 package com.fiap.endereco.ws;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.fiap.endereco.to.EnderecoTO;
 
 public class EnderecoWSProvider {
 	
-	private Map<String,EnderecoTO> enderecos;
-	private EnderecoTO endereco;
-
-	public EnderecoTO consultarEndereco(String cep) {
-		
-		for (EnderecoTO e : enderecos.values()) {
-			if (e.getCep().equals(cep)) {
-				return endereco;
-			}
-		}
-		
-		return null;
-		
-	}
+	private static Map<String, EnderecoTO> enderecos = new HashMap<>();
 	
 	public void carregarEnderecos() {
 		
-		endereco = new EnderecoTO();
+		EnderecoTO endereco = new EnderecoTO();
 		
 		endereco.setCep("69905008");
 		endereco.setLogradouro("Travessa Felisbela do Nascimento");
@@ -77,5 +65,19 @@ public class EnderecoWSProvider {
 		enderecos.put(endereco.getCep(), endereco);
 		
 	}
+
+	public EnderecoTO consultarEndereco(String cep) {
+		
+		for (EnderecoTO e : enderecos.values()) {
+			if (e.getCep().equals(cep)) {
+				return e;
+			}
+		}
+		
+		return null;
+		
+	}
+	
+	
 
 }
