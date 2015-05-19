@@ -11,34 +11,16 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
-@Table(name="TAB_ENDERECO")
-@GenericGenerator(name="seqEndereco", strategy="increment")
 public class EnderecoTO implements Serializable{
 	
 	public EnderecoTO() {	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seqEndereco")
-	@Column(name="DS_CEP")
 	private String cep;
-	
-	@Column(name="DS_LOGRADOURO")
 	private String logradouro;
-	
-	@Column(name="DS_BAIRRO")
 	private String bairro;
-	
-	@Column(name="DS_CIDADE")
 	private String cidade;
-	
-	@Column(name="DS_ESTADO")
 	private String estado;
-	
-	@Column(name="DS_COMLEMENTO")
 	private String complemento;
-	
-	@Column(name="NR_NUMERO")
 	private int numero;
 	
 	public String getCep() {
