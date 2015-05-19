@@ -1,12 +1,13 @@
 package com.fiap.endereco.ws;
 
 import java.util.List;
+import java.util.Map;
 
 import com.fiap.endereco.to.EnderecoTO;
 
 public class EnderecoWSProvider {
 	
-	private List<EnderecoTO> enderecos;
+	private Map<String,EnderecoTO> enderecos;
 
 	public EnderecoTO consultarEndereco(String cep) {
 		
@@ -30,7 +31,7 @@ public class EnderecoWSProvider {
 		endereco.setCidade("Rio Branco");
 		endereco.setEstado("AC");
 		
-		enderecos.add(endereco);
+		enderecos.put(endereco.getCep(), endereco);
 		
 		
 		endereco = new EnderecoTO();
@@ -41,7 +42,7 @@ public class EnderecoWSProvider {
 		endereco.setCidade("Rio Branco");
 		endereco.setEstado("AC");
 		
-		enderecos.add(endereco);
+		enderecos.put(endereco.getCep(), endereco);
 		
 		endereco = new EnderecoTO();
 		
@@ -51,7 +52,7 @@ public class EnderecoWSProvider {
 		endereco.setCidade("Rio Branco");
 		endereco.setEstado("AC");
 		
-		enderecos.add(endereco);
+		enderecos.put(endereco.getCep(), endereco);
 		
 		
 		endereco = new EnderecoTO();
@@ -62,7 +63,7 @@ public class EnderecoWSProvider {
 		endereco.setCidade("Rio Branco");
 		endereco.setEstado("AC");
 		
-		enderecos.add(endereco);
+		enderecos.put(endereco.getCep(), endereco);
 
 		
 		endereco = new EnderecoTO();
@@ -73,7 +74,7 @@ public class EnderecoWSProvider {
 		endereco.setCidade("Rio Branco");
 		endereco.setEstado("AC");
 		
-		enderecos.add(endereco);
+		enderecos.put(endereco.getCep(), endereco);
 		
 	}
 
