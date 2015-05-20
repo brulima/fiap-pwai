@@ -16,6 +16,12 @@ public class LoginMB {
 	private List<LoginTO> logins;
 	private LoginTO loginTO;
 	
+	public LoginMB() {
+		
+		loginTO = new LoginTO();
+		
+	}
+
 	public List<LoginTO> getLogins() {
 		return logins;
 	}
@@ -30,12 +36,6 @@ public class LoginMB {
 
 	public void setLoginTO(LoginTO loginTO) {
 		this.loginTO = loginTO;
-	}
-
-	public LoginMB() {
-		
-		loginTO = new LoginTO();
-		
 	}
 	
 	public String logar(){

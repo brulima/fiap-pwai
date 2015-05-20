@@ -7,22 +7,31 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 	<f:view contentType="text/html">
+	
 		<h:body>
+		
 			<h:form>
+			
 				<h:panelGrid columns="2">
 				
-					<h:outputLabel value="Usuário: "/>
-					<h:inputText required="true" value="#{loginMB.loginTO.usuario}"/>
+					<h:outputLabel value="Usuário:" />
+					<h:inputText value="#{loginMB.loginTO.usuario}">
+						<f:validateLength minimum="3" maximum="15" />
+					</h:inputText>
 					
 					<h:outputLabel value="Senha:" />
-					<h:inputText required="true" value="#{loginMB.loginTO.senha}"/>
-					
+					<h:inputText value="#{loginMB.loginTO.senha}">
+						<f:validateLength minimum="3" maximum="10" />
+					</h:inputText>
+				
 					<h:commandButton value="Login" action="#{loginMB.logar}" />
 				
 				</h:panelGrid>
+			
 			</h:form>
+		
 		</h:body>
+	
 	</f:view>
-	
-	
+
 </html>

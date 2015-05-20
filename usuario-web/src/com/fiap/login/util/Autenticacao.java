@@ -7,7 +7,7 @@ import com.fiap.usuario.to.LoginTO;
 
 public class Autenticacao {
 	
-	private List<LoginTO> logins;
+	private static List<LoginTO> logins;
 	
 	public Autenticacao() {
 		
