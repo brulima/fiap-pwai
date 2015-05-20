@@ -5,19 +5,40 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-
-	<f:view contentType="text/html">
 	
+	<f:view contentType="text/html">
+
 		<h:body>
-			<h3> Usuário  autenticado  não possui privilégios de acesso a esta funcionalidade!</h3>
+		
+			<h:outputLabel value="Usuário Logado: " />
+			<h:outputText value="#{loginMB.loginTO.usuario}" />
 			
 			<br />
 			
+			<hr />
+		
 			<h:form>
-				<h:link value="Voltar" outcome="" />
-			</h:form>
 			
+				<h:panelGrid columns="3">
+				
+					
+				
+				
+				
+				
+				
+					<h:link value="Consulta de Nota Fiscal" outcome="consultaNF" />
+					<h:link value="Remoção de Nota Fiscal" outcome="removeNF" />
+					<h:link value="Atualização de Nota Fiscal" outcome="atualizaNF" />
+					<h:link value="Inserção de Nota Fiscal" outcome="cadastraNF" />
+					<h:link value="Listagem de Notas Fiscais" outcome="listaNF" />
+				
+				</h:panelGrid>
+			
+			</h:form>
+		
 		</h:body>
-	
+
 	</f:view>
+	
 </html>

@@ -15,13 +15,13 @@
 				<h:panelGrid columns="2">
 				
 					<h:outputLabel value="Usuário:" />
-					<h:inputText value="#{loginMB.loginTO.usuario}">
-						<f:validateLength minimum="3" maximum="15" />
+					<h:inputText required="true" requiredMessage="Campo de usuário obrigatorio"
+								 value="#{loginMB.loginTO.usuario}">
 					</h:inputText>
 					
 					<h:outputLabel value="Senha:" />
-					<h:inputText value="#{loginMB.loginTO.senha}">
-						<f:validateLength minimum="3" maximum="10" />
+					<h:inputText required="true" requiredMessage="Campo de senha obrigatorio"
+								 value="#{loginMB.loginTO.senha}">
 					</h:inputText>
 				
 					<h:commandButton value="Login" action="#{loginMB.logar}" />
