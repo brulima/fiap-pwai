@@ -3,6 +3,8 @@ package com.fiap.usuario.to;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import com.fiap.endereco.ws.EnderecoWSProviderStub.EnderecoTO;
+
 public class UsuarioTO implements Serializable {
 
 	public UsuarioTO() {

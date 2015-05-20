@@ -10,5 +10,13 @@
 			<default-locale>en</default-locale>
 		</locale-config>
 	</application>
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/falhaLogin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

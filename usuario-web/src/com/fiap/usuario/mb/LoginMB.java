@@ -4,9 +4,10 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
+import com.fiap.login.util.Autenticacao;
 import com.fiap.usuario.to.LoginTO;
-import com.fiap.usuario.to.UsuarioTO;
 
 @ManagedBean
 @SessionScoped
@@ -33,14 +34,28 @@ public class LoginMB {
 
 	public LoginMB() {
 		
+		loginTO = new LoginTO();
+		
 	}
 	
 	public String logar(){
-		return null;
+		
+		String retorno = "falha";
+		
+		Autenticacao aut = new Autenticacao();
+		
+		if(aut.autenticar(getLoginTO())) {
+			retorno = "autenticado";
+		}
+		
+		return retorno;
 	}
 	
 	public String lougout(){
-		return null;
+		
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("loginMB");
+
+		return "logout";
 	}
 
 }

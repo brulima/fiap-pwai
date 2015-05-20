@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 public class LoginTO implements Serializable {
 
-	public LoginTO() {
-		super();
-	}
+	public LoginTO() {	}
 	
 	private String usuario;
 	private String senha;
@@ -29,6 +27,28 @@ public class LoginTO implements Serializable {
 	}
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LoginTO other = (LoginTO) obj;
+		if (senha == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!senha.equals(other.senha))
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
+			return false;
+		return true;
 	}
 
 }

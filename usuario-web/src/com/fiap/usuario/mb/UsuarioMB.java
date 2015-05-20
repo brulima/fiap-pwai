@@ -1,7 +1,12 @@
 package com.fiap.usuario.mb;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 import com.fiap.usuario.to.UsuarioTO;
 
+@ManagedBean
+@SessionScoped
 public class UsuarioMB {
 	
 	private UsuarioTO usuarioTO;
