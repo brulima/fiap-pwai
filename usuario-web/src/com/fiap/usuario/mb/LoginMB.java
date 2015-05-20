@@ -40,15 +40,9 @@ public class LoginMB {
 	
 	public String logar(){
 		
-		String retorno = "falha";
-		
 		Autenticacao aut = new Autenticacao();
 		
-		if(aut.autenticar(getLoginTO())) {
-			retorno = "autenticado";
-		}
-		
-		return retorno;
+		return aut.autenticar(getLoginTO());
 	}
 	
 	public String lougout(){
