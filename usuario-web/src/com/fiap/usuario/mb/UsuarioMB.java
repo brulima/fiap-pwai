@@ -30,6 +30,8 @@ public class UsuarioMB {
 
 	public UsuarioMB(){
 		
+		usuarioTO = new UsuarioTO();
+		
 	}
 	
 	public void consultarEndereco(){

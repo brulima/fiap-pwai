@@ -21,11 +21,15 @@ public class Autenticacao {
 		
 		logins.add(loginTO);
 		
+		loginTO = new LoginTO();
+		
 		loginTO.setUsuario("Admin");
 		loginTO.setSenha("senhaAdm");
 		loginTO.setPerfil("cadastro");
 		
 		logins.add(loginTO);
+		
+		loginTO = new LoginTO();
 		
 		loginTO.setUsuario("Admin1");
 		loginTO.setSenha("fiapA");

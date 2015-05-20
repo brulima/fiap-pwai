@@ -13,6 +13,9 @@
 			<h:outputLabel value="Usuário Logado: " />
 			<h:outputText value="#{loginMB.loginTO.usuario}" />
 			
+			<h:outputLabel value=" - Perfil: " />
+			<h:outputText value="#{loginMB.loginTO.perfil}" />
+			
 			<br />
 			
 			<hr />
@@ -21,18 +24,14 @@
 			
 				<h:panelGrid columns="3">
 				
+					<h:outputLabel value="Nome: " />
+					<h:inputText value="#{usuarioMB.usuarioTO.nome}"/>
+					<br />
 					
-				
-				
-				
-				
-				
-					<h:link value="Consulta de Nota Fiscal" outcome="consultaNF" />
-					<h:link value="Remoção de Nota Fiscal" outcome="removeNF" />
-					<h:link value="Atualização de Nota Fiscal" outcome="atualizaNF" />
-					<h:link value="Inserção de Nota Fiscal" outcome="cadastraNF" />
-					<h:link value="Listagem de Notas Fiscais" outcome="listaNF" />
-				
+					<h:outputLabel value="Sobrenome: " />
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<br />
+					
 				</h:panelGrid>
 			
 			</h:form>
