@@ -39,19 +39,21 @@ public class Autenticacao {
 		
 	}
 	
-	public boolean autenticar(LoginTO loginTO) {
+	public String autenticar(LoginTO loginTO) {
 		
-		boolean retorno = false;
 		
 		for (LoginTO user : logins) {
 			
 			if(loginTO.equals(user)) {
-				retorno = true;
+				if (user.getPerfil().equals("cadastro")) {
+					return "cadastro";
+				}
+				if (user.getPerfil().equals("consulta")) {
+					return "consulta";
+				}
 			}
-			
 		}
 		
-		return retorno;
-		
+		return "falha";	
 	}
 }
