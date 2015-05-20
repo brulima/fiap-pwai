@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://ws.endereco.fiap.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax21="http://to.endereco.fiap.com/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.endereco.fiap.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://to.endereco.fiap.com/xsd">
+            <xs:complexType name="EnderecoTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bairro" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cep" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cidade" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="complemento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="logradouro" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numero" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://to.endereco.fiap.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.endereco.fiap.com">
+            <xs:import namespace="http://to.endereco.fiap.com/xsd"/>
+            <xs:element name="carregarEnderecos">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="consultarEndereco">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="cep" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="consultarEnderecoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:EnderecoTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="consultarEnderecoRequest">
+        <wsdl:part name="parameters" element="ns:consultarEndereco"/>
+    </wsdl:message>
+    <wsdl:message name="consultarEnderecoResponse">
+        <wsdl:part name="parameters" element="ns:consultarEnderecoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="carregarEnderecosRequest">
+        <wsdl:part name="parameters" element="ns:carregarEnderecos"/>
+    </wsdl:message>
+    <wsdl:portType name="EnderecoWSProviderPortType">
+        <wsdl:operation name="consultarEndereco">
+            <wsdl:input message="ns:consultarEnderecoRequest" wsaw:Action="urn:consultarEndereco"/>
+            <wsdl:output message="ns:consultarEnderecoResponse" wsaw:Action="urn:consultarEnderecoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="carregarEnderecos">
+            <wsdl:input message="ns:carregarEnderecosRequest" wsaw:Action="urn:carregarEnderecos"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="EnderecoWSProviderSoap11Binding" type="ns:EnderecoWSProviderPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="consultarEndereco">
+            <soap:operation soapAction="urn:consultarEndereco" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="carregarEnderecos">
+            <soap:operation soapAction="urn:carregarEnderecos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="EnderecoWSProviderSoap12Binding" type="ns:EnderecoWSProviderPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="consultarEndereco">
+            <soap12:operation soapAction="urn:consultarEndereco" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="carregarEnderecos">
+            <soap12:operation soapAction="urn:carregarEnderecos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="EnderecoWSProviderHttpBinding" type="ns:EnderecoWSProviderPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="consultarEndereco">
+            <http:operation location="consultarEndereco"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="carregarEnderecos">
+            <http:operation location="carregarEnderecos"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="EnderecoWSProvider">
+        <wsdl:port name="EnderecoWSProviderHttpSoap11Endpoint" binding="ns:EnderecoWSProviderSoap11Binding">
+            <soap:address location="http://localhost:8060/endereco-ws/services/EnderecoWSProvider.EnderecoWSProviderHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="EnderecoWSProviderHttpSoap12Endpoint" binding="ns:EnderecoWSProviderSoap12Binding">
+            <soap12:address location="http://localhost:8060/endereco-ws/services/EnderecoWSProvider.EnderecoWSProviderHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="EnderecoWSProviderHttpEndpoint" binding="ns:EnderecoWSProviderHttpBinding">
+            <http:address location="http://localhost:8060/endereco-ws/services/EnderecoWSProvider.EnderecoWSProviderHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
