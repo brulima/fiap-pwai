@@ -3,7 +3,7 @@ package com.fiap.endereco.to;
 import java.io.Serializable;
 
 public class EnderecoTO implements Serializable{
-	
+
 	public EnderecoTO() {	}
 	
 	private String cep;
