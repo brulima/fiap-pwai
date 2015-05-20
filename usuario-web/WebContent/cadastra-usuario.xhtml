@@ -33,40 +33,55 @@
 					<br />
 					
 					<h:outputLabel value="CEP: " />
-					<h:inputText value="#{}"/>
-					<h:commandButton value="Login" actionListener="#{}" />
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:commandButton value="Login" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
 					
 					<h:outputLabel value="Logradouro: " />
-					<h:outputLabel value="#{}"/>
+					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
 					<h:outputLabel value="Numero: " />
-					<h:inputText value="#{}"/>
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
 					<h:outputLabel value="Complemento: " />
-					<h:inputText value="#{}"/>
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
 					<h:outputLabel value="Bairro: " />
-					<h:outputLabel value="#{}"/>
+					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
 					<h:outputLabel value="Cidade: " />
-					<h:outputLabel value="#{}"/>
+					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
 					<h:outputLabel value="Estado: " />
-					<h:outputLabel value="#{}"/>
+					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
-					<h:outputLabel value="Numero: " />
-					<h:inputText value="#{}"/>
+					<h:outputLabel value="Idade: " />
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
 					
-					<h:outputLabel value="Numero: " />
-					<h:inputText value="#{}"/>
+					<h:outputLabel value="Telefone: " />
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
 					<br />
+					
+					<h:outputLabel value="Data de Nascimento: " />
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<br />
+					
+					<h:outputLabel value="URL Foto: " />
+					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:commandButton value="Carregar Foto" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
+					
+					<h:outputLabel value="Preview Foto: " />
+					<h:outputLabel value="" />
+					<br/>
+					
+					<h:commandButton value="Cadastrar Usuario" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
+					<h:commandButton value="Lougout" outcome="logout" />
 					
 					
 				</h:panelGrid>
