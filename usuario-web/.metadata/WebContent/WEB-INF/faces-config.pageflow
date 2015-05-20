@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14321433371710" configfile="/usuario-web/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="336" y="48" id="pf14321437743141" outlinks="pf14321437743142" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="falhaLogin.xhtml" x="516" y="48" id="pf14321437743143" inlinks="pf14321437743142" path="/falhaLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="336" y="12" id="pf14321437743141" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14321437743142 pf14321579556190" inlinks="pf14321587134882" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="falhaLogin.xhtml" x="540" y="12" id="pf14321437743143" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14321437743142" path="/falhaLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastra-usuario.xhtml" x="305" y="168" id="pf14321579556201" inlinks="pf14321579556190" path="/cadastra-usuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="120" y="12" id="pf14321587134883" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14321587134882" path="*"/>
   <links id="pf14321437743142" target="pf14321437743143" source="pf14321437743141" outcome="falha"/>
+  <links id="pf14321579556190" target="pf14321579556201" source="pf14321437743141" outcome="autenticado" redirect="true"/>
+  <links id="pf14321587134882" target="pf14321437743141" source="pf14321587134883" outcome="logout" redirect="true"/>
 </pageflow:Pageflow>
