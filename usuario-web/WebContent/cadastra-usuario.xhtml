@@ -14,7 +14,7 @@
 			<h:outputText value="#{login.loginTO.usuario}" />
 			
 			<h:outputLabel value=" - Perfil: " />
-			<h:outputText value="#{login.loginTO.perfil}" />
+			<h:outputText value="#{login.loginTO.perfil}" rendered="true"/>
 			
 			<br />
 			
@@ -33,19 +33,19 @@
 					<br />
 					
 					<h:outputLabel value="CEP: " />
-					<h:inputText value="#{usuario.usuarioTO.sobrenome}"/>
-					<h:commandButton value="Login" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
+					<h:inputText value=""/>
+					<h:commandButton value="Login" />
 					
 					<h:outputLabel value="Logradouro: " />
 					<h:outputLabel value="Avenida Lins de Vasconcelos"/>
 					<br />
 					
 					<h:outputLabel value="Numero: " />
-					<h:inputText value="#{usuario.usuarioTO}"/>
+					<h:inputText value=""/>
 					<br />
 					
 					<h:outputLabel value="Complemento: " />
-					<h:inputText value="#{usuario.usuarioTO}"/>
+					<h:inputText value=""/>
 					<br />
 					
 					<h:outputLabel value="Bairro: "/>
@@ -70,16 +70,15 @@
 					
 					<h:outputLabel value="Data de Nascimento: " />
 					<h:inputText value="#{usuario.usuarioTO.dataNascimento}">
-					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
 					</h:inputText>
 					<br />
 					
 					<h:outputLabel value="URL Foto: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO.urlFoto}" />
 					<h:commandButton value="Carregar Foto" actionListener="#{usuarioMB.cadastrarFoto}" />
 					
 					<h:outputLabel value="Preview Foto: " />
-					<h:outputLabel value="" />
+					<h:graphicImage url="#{usuario.usuarioTO.urlFoto}" />
 					<br/>
 					
 					<h:commandButton value="Cadastrar Usuario" actionListener="#{usuarioMB.cadastrarUsuario}" />

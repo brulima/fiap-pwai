@@ -3,6 +3,10 @@ package com.fiap.usuario.mb;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.fiap.endereco.ws.EnderecoWSProviderStub;
+import com.fiap.endereco.ws.EnderecoWSProviderStub.ConsultarEndereco;
+import com.fiap.endereco.ws.EnderecoWSProviderStub.ConsultarEnderecoResponse;
+import com.fiap.endereco.ws.EnderecoWSProviderStub.EnderecoTO;
 import com.fiap.usuario.to.UsuarioTO;
 
 @ManagedBean(name="usuario")
@@ -36,7 +40,10 @@ public class UsuarioMB {
 	
 	public void consultarEndereco(){
 		
+		
 	}
+		
+	
 	
 	public void cadastrarFoto(){
 		

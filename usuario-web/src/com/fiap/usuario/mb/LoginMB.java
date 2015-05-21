@@ -1,6 +1,7 @@
 package com.fiap.usuario.mb;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -42,6 +43,8 @@ public class LoginMB {
 		
 		Autenticacao aut = new Autenticacao();
 		
+	    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentUser", aut);
+		
 		return aut.autenticar(getLoginTO());
 	}
 	
@@ -51,5 +54,6 @@ public class LoginMB {
 
 		return "logout";
 	}
+	
 
 }

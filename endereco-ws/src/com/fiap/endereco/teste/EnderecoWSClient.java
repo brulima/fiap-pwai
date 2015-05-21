@@ -9,12 +9,15 @@ public class EnderecoWSClient {
 		
 		EnderecoWSProvider tes = new EnderecoWSProvider();
 		
-		tes.carregarEnderecos();
-		
 		EnderecoTO endereco = tes.consultarEndereco("69918282");
 		
 		System.out.println(endereco.getBairro());
 		System.out.println(endereco.getCidade());
+		System.out.println(endereco.getCep());
+		System.out.println(endereco.getComplemento());
+		System.out.println(endereco.getEstado());
+		System.out.println(endereco.getLogradouro());
+		System.out.println(endereco.getNumero());
 
 	}
 
