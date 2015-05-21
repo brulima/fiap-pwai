@@ -6,10 +6,6 @@ import java.util.Calendar;
 import com.fiap.endereco.ws.EnderecoWSProviderStub.EnderecoTO;
 
 public class UsuarioTO implements Serializable {
-
-	public UsuarioTO() {
-		super();
-	}
 	
 	private String nome;
 	private String sobrenome;
@@ -18,6 +14,10 @@ public class UsuarioTO implements Serializable {
 	private int idade;
 	private Calendar dataNascimento = Calendar.getInstance();
 	private String urlFoto;
+	
+	public UsuarioTO() {
+		
+	}
 	
 	public String getNome() {
 		return nome;

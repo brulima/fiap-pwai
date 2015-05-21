@@ -16,15 +16,15 @@
 				
 					<h:outputLabel value="Usuário:" />
 					<h:inputText required="true" requiredMessage="Campo de usuário obrigatorio"
-								 value="#{loginMB.loginTO.usuario}">
+								 value="#{login.loginTO.usuario}">
 					</h:inputText>
 					
 					<h:outputLabel value="Senha:" />
 					<h:inputText required="true" requiredMessage="Campo de senha obrigatorio"
-								 value="#{loginMB.loginTO.senha}">
+								 value="#{login.loginTO.senha}">
 					</h:inputText>
 				
-					<h:commandButton value="Login" action="#{loginMB.logar}" />
+					<h:commandButton value="Login" action="#{login.logar}" />
 				
 				</h:panelGrid>
 			

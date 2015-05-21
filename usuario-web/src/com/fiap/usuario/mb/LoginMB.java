@@ -9,7 +9,7 @@ import javax.faces.context.FacesContext;
 import com.fiap.login.util.Autenticacao;
 import com.fiap.usuario.to.LoginTO;
 
-@ManagedBean
+@ManagedBean(name="login")
 @SessionScoped
 public class LoginMB {
 	

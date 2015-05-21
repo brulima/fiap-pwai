@@ -5,12 +5,18 @@ import javax.faces.bean.SessionScoped;
 
 import com.fiap.usuario.to.UsuarioTO;
 
-@ManagedBean
+@ManagedBean(name="usuario")
 @SessionScoped
 public class UsuarioMB {
 	
 	private UsuarioTO usuarioTO;
 	private String urlFoto;
+	
+	public UsuarioMB(){
+		
+		usuarioTO = new UsuarioTO();
+		
+	}
 	
 	public UsuarioTO getUsuarioTO() {
 		return usuarioTO;
@@ -26,12 +32,6 @@ public class UsuarioMB {
 
 	public void setUrlFoto(String urlFoto) {
 		this.urlFoto = urlFoto;
-	}
-
-	public UsuarioMB(){
-		
-		usuarioTO = new UsuarioTO();
-		
 	}
 	
 	public void consultarEndereco(){

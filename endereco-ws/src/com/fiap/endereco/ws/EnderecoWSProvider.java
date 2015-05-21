@@ -7,7 +7,7 @@ import com.fiap.endereco.to.EnderecoTO;
 
 public class EnderecoWSProvider {
 	
-	private static Map<String, EnderecoTO> enderecos = new HashMap<>();
+	private Map<String, EnderecoTO> enderecos = new HashMap<>();
 	
 	public void carregarEnderecos() {
 		

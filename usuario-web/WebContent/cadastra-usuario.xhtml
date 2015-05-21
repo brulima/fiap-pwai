@@ -11,10 +11,10 @@
 		<h:body>
 		
 			<h:outputLabel value="Usuário Logado: " />
-			<h:outputText value="#{loginMB.loginTO.usuario}" />
+			<h:outputText value="#{login.loginTO.usuario}" />
 			
 			<h:outputLabel value=" - Perfil: " />
-			<h:outputText value="#{loginMB.loginTO.perfil}" />
+			<h:outputText value="#{login.loginTO.perfil}" />
 			
 			<br />
 			
@@ -25,63 +25,65 @@
 				<h:panelGrid columns="3">
 				
 					<h:outputLabel value="Nome: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.nome}"/>
+					<h:inputText label="Nome" value="#{usuario.usuarioTO.nome}" maxlength="50"/>
 					<br />
 					
 					<h:outputLabel value="Sobrenome: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText label="Sobrenome" value="#{usuario.usuarioTO.sobrenome}" maxlength="50"/>
 					<br />
 					
 					<h:outputLabel value="CEP: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO.sobrenome}"/>
 					<h:commandButton value="Login" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
 					
 					<h:outputLabel value="Logradouro: " />
-					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:outputLabel value="Avenida Lins de Vasconcelos"/>
 					<br />
 					
 					<h:outputLabel value="Numero: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO}"/>
 					<br />
 					
 					<h:outputLabel value="Complemento: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO}"/>
 					<br />
 					
-					<h:outputLabel value="Bairro: " />
-					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:outputLabel value="Bairro: "/>
+					<h:outputLabel value="Vila Mariana"/>
 					<br />
 					
 					<h:outputLabel value="Cidade: " />
-					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:outputLabel value="São Paulo"/>
 					<br />
 					
 					<h:outputLabel value="Estado: " />
-					<h:outputLabel value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:outputLabel value="SP"/>
 					<br />
 					
 					<h:outputLabel value="Idade: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO.idade}"/>
 					<br />
 					
 					<h:outputLabel value="Telefone: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO.telefone}"/>
 					<br />
 					
 					<h:outputLabel value="Data de Nascimento: " />
-					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
+					<h:inputText value="#{usuario.usuarioTO.dataNascimento}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+					</h:inputText>
 					<br />
 					
 					<h:outputLabel value="URL Foto: " />
 					<h:inputText value="#{usuarioMB.usuarioTO.sobrenome}"/>
-					<h:commandButton value="Carregar Foto" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
+					<h:commandButton value="Carregar Foto" actionListener="#{usuarioMB.cadastrarFoto}" />
 					
 					<h:outputLabel value="Preview Foto: " />
 					<h:outputLabel value="" />
 					<br/>
 					
-					<h:commandButton value="Cadastrar Usuario" actionListener="#{usuarioMB.usuarioTO.sobrenome}" />
-					<h:commandButton value="Lougout" outcome="logout" />
+					<h:commandButton value="Cadastrar Usuario" actionListener="#{usuarioMB.cadastrarUsuario}" />
+					<h:commandButton value="Lougout" action="logout" />
 					
 					
 				</h:panelGrid>
