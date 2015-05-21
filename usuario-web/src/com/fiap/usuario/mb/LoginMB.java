@@ -43,8 +43,6 @@ public class LoginMB {
 		
 		Autenticacao aut = new Autenticacao();
 		
-	    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentUser", aut);
-		
 		return aut.autenticar(getLoginTO());
 	}
 	

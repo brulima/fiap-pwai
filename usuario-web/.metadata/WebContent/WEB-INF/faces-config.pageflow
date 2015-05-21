@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14321433371710" configfile="/usuario-web/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="338" y="562" id="pf14321437743141" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14321437743142 pf14321579556190 pf14321639427480" inlinks="pf14321587134882" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="falhaLogin.xhtml" x="323" y="420" id="pf14321437743143" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14321437743142" path="/falhaLogin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="cadastra-usuario.xhtml" x="554" y="562" id="pf14321579556201" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14321579556190" path="/cadastra-usuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="338" y="562" id="pf14321437743141" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14321437743142 pf14321639427480 pf14322380060862" inlinks="pf14321587134882" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="falhaLogin.xhtml" x="323" y="444" id="pf14321437743143" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14321437743142" path="/falhaLogin.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="562" id="pf14321587134883" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14321587134882" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="acesso-nao-autorizado.xhtml" x="291" y="696" id="pf14321639427491" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14321639427480" path="/acesso-nao-autorizado.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="acesso-nao-autorizado.xhtml" x="291" y="672" id="pf14321639427491" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14321639427480" path="/acesso-nao-autorizado.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastra-usuario.xhtml" x="528" y="562" id="pf14322380060863" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14322380060862" path="/cadastra-usuario.xhtml"/>
   <links id="pf14321437743142" target="pf14321437743143" source="pf14321437743141" outcome="falha" redirect="true"/>
-  <links id="pf14321579556190" target="pf14321579556201" source="pf14321437743141" outcome="cadastro" redirect="true"/>
   <links id="pf14321587134882" target="pf14321437743141" source="pf14321587134883" outcome="logout" redirect="true"/>
   <links id="pf14321639427480" target="pf14321639427491" source="pf14321437743141" outcome="consulta" redirect="true"/>
+  <links id="pf14322380060862" target="pf14322380060863" source="pf14321437743141" outcome="cadastro" redirect="true"/>
 </pageflow:Pageflow>

@@ -1,7 +1,10 @@
 package com.fiap.usuario.mb;
 
+import java.util.Map;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import com.fiap.endereco.ws.EnderecoWSProviderStub;
 import com.fiap.endereco.ws.EnderecoWSProviderStub.ConsultarEndereco;
@@ -40,12 +43,36 @@ public class UsuarioMB {
 	
 	public void consultarEndereco(){
 		
+		EnderecoWSProviderStub stub;
 		
-	}
+		try {
+			
+			stub = new EnderecoWSProviderStub();
+			ConsultarEndereco request = new ConsultarEndereco();
+			
+			request.setCep("cep");
+			
+			ConsultarEnderecoResponse response = stub.consultarEndereco(request);
+			
+			EnderecoTO enderecoTO = new EnderecoTO();
+			
+			enderecoTO = response.get_return();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
+	
+	public void carregarFoto(){
 		
-	
-	
-	public void cadastrarFoto(){
+		UsuarioTO usu = new UsuarioTO();
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		Map<String, Object> map = context.getExternalContext().getSessionMap();
+		UsuarioMB frmCadastro= (UsuarioMB)map.get("usuario");
+		
+		
+		usu.setUrlFoto(frmCadastro.getUrlFoto());
 		
 	}
 	
