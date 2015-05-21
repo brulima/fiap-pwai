@@ -47,10 +47,14 @@ public class UsuarioMB {
 		
 		try {
 			
+			FacesContext context = FacesContext.getCurrentInstance();
+			Map<String, String> maprequest = context.getExternalContext().getRequestParameterMap();
+			String nome = maprequest.get("cpfConsulta");
+			
 			stub = new EnderecoWSProviderStub();
 			ConsultarEndereco request = new ConsultarEndereco();
 			
-			request.setCep("cep");
+			request.setCep(nome);
 			
 			ConsultarEnderecoResponse response = stub.consultarEndereco(request);
 			
@@ -77,6 +81,16 @@ public class UsuarioMB {
 	}
 	
 	public void cadastrarUsuario(){
+		
+		usuarioTO = new UsuarioTO();
+		FacesContext context = FacesContext.getCurrentInstance();
+		Map<String, String> maprequest = context.getExternalContext().getRequestParameterMap();
+		
+		String nome = maprequest.get("nomeUs");
+		usuarioTO.setNome(nome);
+		
+		String sobre = maprequest.get("sobrenomeUs");
+		usuarioTO.setNome(sobre);
 		
 	}
 	

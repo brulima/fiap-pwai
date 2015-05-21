@@ -25,19 +25,22 @@
 				<h:panelGrid columns="3">
 				
 					<h:outputLabel value="Nome: " />
-					<h:inputText label="Nome" value="#{usuario.usuarioTO.nome}" maxlength="50"/>
+					<h:inputText label="nome" id="nomeUs" 
+								 value="#{usuario.usuarioTO.nome}" maxlength="50"/>
 					<br />
 					
 					<h:outputLabel value="Sobrenome: " />
-					<h:inputText label="Sobrenome" value="#{usuario.usuarioTO.sobrenome}" maxlength="50"/>
+					<h:inputText label="nobrenome" id="sobrenomeUs" 
+								 value="#{usuario.usuarioTO.sobrenome}" maxlength="50"/>
 					<br />
 					
 					<h:outputLabel value="CEP: " />
-					<h:inputText value=""/>
-					<h:commandButton value="Login" />
+					<h:inputText id="cepConsulta" value=""/>
+					<h:commandButton value="Consultar Endereço" 
+									 actionListener="#{usuario.consultarEndereco}"/>
 					
 					<h:outputLabel value="Logradouro: " />
-					<h:outputLabel value="Avenida Lins de Vasconcelos"/>
+					<h:outputLabel value="Av. Lins de Vasconcelos"/>
 					<br />
 					
 					<h:outputLabel value="Numero: " />
@@ -65,12 +68,11 @@
 					<br />
 					
 					<h:outputLabel value="Telefone: " />
-					<h:inputText value="#{usuario.usuarioTO.telefone}"/>
+					<h:inputText value=""/>
 					<br />
 					
 					<h:outputLabel value="Data de Nascimento: " />
-					<h:inputText value="#{usuario.usuarioTO.dataNascimento}">
-					</h:inputText>
+					<h:inputText value=""/>
 					<br />
 					
 					<h:outputLabel value="URL Foto: " />
@@ -82,7 +84,7 @@
 					<br/>
 					
 					<h:commandButton value="Cadastrar Usuario" actionListener="#{usuarioMB.cadastrarUsuario}" />
-					<h:commandButton value="Lougout" action="logout" />
+					<h:commandButton value="Lougout" action="#{usuarioMB.logout}" />
 					
 					
 				</h:panelGrid>
